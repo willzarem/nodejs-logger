@@ -4,6 +4,7 @@ import { Logger } from '.'
 export const create = ({ bodymen: { body } }, res, next) =>
   Logger.create(body)
     .then((logger) => logger.view(true))
+    .then((view) => console.log(view))
     .then(success(res, 201))
     .catch(next)
 
